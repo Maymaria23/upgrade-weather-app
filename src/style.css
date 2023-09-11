@@ -22,3 +22,15 @@ li {
   font-weight: 100;
   line-height: 19px;
 }
+
+.weather-temperature img {
+  margin-right: 20px;
+  height: 90px;
+  width: 90px;
+}
+
+.weather-temperature strong {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 400px;
+}
