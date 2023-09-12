@@ -34,3 +34,10 @@ li {
   line-height: 1;
   font-weight: 400px;
 }
+
+input,
+label {
+  text-align: left;
+  border-color: #000;
+  margin: 5px;
+}
