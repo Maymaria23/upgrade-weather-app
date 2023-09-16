@@ -41,3 +41,11 @@ label {
   border-color: #000;
   margin: 5px;
 }
+
+.units {
+  font-size: 20px;
+}
+
+.temperature {
+  font-size: 35px;
+}
