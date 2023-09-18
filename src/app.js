@@ -35,7 +35,7 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute(
     "src",
@@ -45,14 +45,14 @@ function displayTemperature(response) {
 }
 function search(city) {
   let apiKey = "d90360f2bc5bo9651ac13cb48t37678f";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=d90360f2bc5bo9651ac13cb48t37678f&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=d90360f2bc5bo9651ac13cb48t37678f&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#city-imput");
+  let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 
