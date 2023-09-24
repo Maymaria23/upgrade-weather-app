@@ -65,12 +65,11 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
-  let apiKey = "d90360f2bc5bo9651ac13cb48t37678f";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lat}&lat=${coordinates.lon}&key={d90360f2bc5bo9651ac13cb48t37678f}&units=metric`;
+  let apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=bd79ao40tde3dec118ca46bc3e6dd55f`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-
 function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temp");
@@ -92,7 +91,7 @@ function displayTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 function search(city) {
   let apiKey = "d90360f2bc5bo9651ac13cb48t37678f";
@@ -136,4 +135,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Garden Grove");
-displayForecast();
