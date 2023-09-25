@@ -44,16 +44,16 @@ function displayForecast(response) {
           forecastDay.time * 1000
         )}</div>
         <img
-          src="${forecastDay.condition.icon_url};
+          src="${forecastDay.condition.icon_url}"
           alt=""
           width="42"
         />
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
-            forecastDay.temp.max
+            forecastDay.temperature.maximum
           )}° </span>
           <span class="weather-forecast-temperature-min"> ${Math.round(
-            forecastDay.temp.min
+            forecastDay.temperature.minimum
           )}° </span>
         </div>
       </div>
